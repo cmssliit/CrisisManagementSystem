@@ -1,7 +1,7 @@
-using CrisisManagementSystem.API.Configurations;
+using CrisisManagementSystem.API.Application.Configurations;
 using CrisisManagementSystem.API.DataLayer;
-using CrisisManagementSystem.API.IRepository;
-using CrisisManagementSystem.API.Repository;
+using CrisisManagementSystem.API.Application.IRepository;
+using CrisisManagementSystem.API.Application.Repository;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 

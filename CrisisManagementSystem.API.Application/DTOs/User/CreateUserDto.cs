@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CrisisManagementSystem.API.DTOs.User
+namespace CrisisManagementSystem.API.Application.DTOs.User
 {
     //Introduce to add here Single Responsibilty priniciple.
     //Only to transfer data.Not to hold data from database

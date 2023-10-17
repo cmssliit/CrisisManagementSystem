@@ -1,4 +1,4 @@
-﻿namespace CrisisManagementSystem.API.DTOs.User
+﻿namespace CrisisManagementSystem.API.Application.DTOs.User
 {
     //we create this dto to single responsiblity princiepl
     // and avoid sending unnersseary data like navigation properties etc

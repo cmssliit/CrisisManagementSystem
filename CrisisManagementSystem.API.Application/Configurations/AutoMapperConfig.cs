@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CrisisManagementSystem.API.DataLayer;
 
-namespace CrisisManagementSystem.API.Configurations
+namespace CrisisManagementSystem.API.Application.Configurations
 {
     public class AutoMapperConfig : Profile
     {

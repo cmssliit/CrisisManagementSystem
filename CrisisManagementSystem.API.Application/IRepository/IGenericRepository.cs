@@ -1,4 +1,4 @@
-﻿namespace CrisisManagementSystem.API.IRepository
+﻿namespace CrisisManagementSystem.API.Application.IRepository
 {
     public interface IGenericRepository<T> where T : class
     {

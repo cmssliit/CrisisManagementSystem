@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CrisisManagementSystem.API.DTOs.User
+namespace CrisisManagementSystem.API.Application.DTOs.User
 {
     //we use abstract class because, we cant instantiate
     //only used for inheritance purposes

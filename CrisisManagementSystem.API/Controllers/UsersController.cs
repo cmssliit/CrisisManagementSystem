@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CrisisManagementSystem.API.DataLayer;
-using CrisisManagementSystem.API.DTOs.User;
+using CrisisManagementSystem.API.Application.DTOs.User;
 using AutoMapper;
-using CrisisManagementSystem.API.IRepository;
+using CrisisManagementSystem.API.Application.IRepository;
 
 namespace CrisisManagementSystem.API.Controllers
 {

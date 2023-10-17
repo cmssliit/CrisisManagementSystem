@@ -1,8 +1,8 @@
 ﻿using CrisisManagementSystem.API.DataLayer;
-using CrisisManagementSystem.API.IRepository;
+using CrisisManagementSystem.API.Application.IRepository;
 using Microsoft.EntityFrameworkCore;
 
-namespace CrisisManagementSystem.API.Repository
+namespace CrisisManagementSystem.API.Application.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

@@ -1,7 +1,7 @@
 ﻿using CrisisManagementSystem.API.DataLayer;
-using CrisisManagementSystem.API.IRepository;
+using CrisisManagementSystem.API.Application.IRepository;
 
-namespace CrisisManagementSystem.API.Repository
+namespace CrisisManagementSystem.API.Application.Repository
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
