@@ -13,6 +13,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public DbSet<User> Users { get;set; }
         public DbSet<Incident> Incidents { get;set; }
         public DbSet<IncidentMedia> IncidentMedia { get;set; }
+        public DbSet<Department> Departments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
