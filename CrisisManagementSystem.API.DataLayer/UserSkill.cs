@@ -9,7 +9,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public DateTime CertificationDate { get; set; }
         public string ProficiencyLevel { get; set; }
         public int UserId { get; set; }
-        public User Users { get; set; }
+        public virtual User User { get; set; }
 
     }
 }

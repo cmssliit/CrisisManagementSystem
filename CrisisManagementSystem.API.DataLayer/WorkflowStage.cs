@@ -8,8 +8,8 @@ namespace CrisisManagementSystem.API.DataLayer
         public string StageName { get; set; }
         public string StageDescription { get; set; }
         public int TaskId { get; set; }
-        public WorkflowTask Task { get; set; }
-        public List<Workflow> Workflows { get; set; }
+        public virtual WorkflowTask Task { get; set; }
+        public virtual ICollection<Workflow> Workflows { get; set; }
 
     }
 }

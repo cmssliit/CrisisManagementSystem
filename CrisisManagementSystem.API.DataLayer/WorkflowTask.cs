@@ -8,9 +8,9 @@ namespace CrisisManagementSystem.API.DataLayer
         public string TaskName { get; set; }
         public string TaskDescription { get; set; }
         public int AssigneeId { get; set; }
-        public User Assignee { get; set; }
+        public virtual User Assignee { get; set; }
         public DateTime Deadline { get; set; }
-        public List<WorkflowStage> WorkflowStages { get; set; }
+        public virtual ICollection<WorkflowStage> WorkflowStages { get; set; }
 
     }
 }
