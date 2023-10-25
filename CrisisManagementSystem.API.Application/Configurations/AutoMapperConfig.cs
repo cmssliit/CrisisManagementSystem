@@ -31,6 +31,10 @@ namespace CrisisManagementSystem.API.Application.Configurations
             CreateMap<Workflow, DTOs.Workflow.CreateWorkflowDto>().ReverseMap();
             CreateMap<Workflow, DTOs.Workflow.GetWorkflowDto>().ReverseMap();
             CreateMap<Workflow, DTOs.Workflow.UpdateWorkflowDto>().ReverseMap();
+
+            CreateMap<UserSkill, DTOs.UserSkill.CreateUserSkillDto>().ReverseMap();
+            CreateMap<UserSkill, DTOs.UserSkill.GetUserSkillDto>().ReverseMap();
+            CreateMap<UserSkill, DTOs.UserSkill.UpdateUserSkillDto>().ReverseMap();
         }
     }
 }
