@@ -11,7 +11,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public string Province { get; set; }
         public int PostalCode { get; set; }
         public int DepartmentId { get; set; }
-        public Department Departments { get; set; }
+        public virtual Department Department { get; set; }
 
     }
 }
