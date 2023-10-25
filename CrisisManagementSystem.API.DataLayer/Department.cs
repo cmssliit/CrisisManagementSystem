@@ -7,7 +7,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public int Id { get; set; }
         public string DeptName { get; set; }
         public int DeptHeadId { get; set; }
-        public User Users { get; set; }
+        public User DeptHead { get; set; }
         public List<Location> Locations { get; set; }
 
     }

@@ -4,6 +4,7 @@ using CrisisManagementSystem.API.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrisisManagementSystem.API.Migrations
 {
     [DbContext(typeof(CrisisManagementDbContext))]
-    partial class CrisisManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025143618_UpdateTables")]
+    partial class UpdateTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,13 +36,16 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Property<int>("DeptHeadId")
                         .HasColumnType("int");
 
+                    b.Property<int>("DeptHeadsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DeptName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeptHeadId");
+                    b.HasIndex("DeptHeadsId");
 
                     b.ToTable("Departments");
                 });
@@ -286,6 +292,9 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Property<int>("StageId")
                         .HasColumnType("int");
 
+                    b.Property<int>("StagesId")
+                        .HasColumnType("int");
+
                     b.Property<string>("WorkflowDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -296,7 +305,7 @@ namespace CrisisManagementSystem.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StageId");
+                    b.HasIndex("StagesId");
 
                     b.ToTable("Workflows");
                 });
@@ -320,9 +329,12 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Property<int>("TaskId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TasksId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("TaskId");
+                    b.HasIndex("TasksId");
 
                     b.ToTable("WorkflowStages");
                 });
@@ -338,6 +350,9 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Property<int>("AssigneeId")
                         .HasColumnType("int");
 
+                    b.Property<int>("AssigneesId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime2");
 
@@ -351,20 +366,20 @@ namespace CrisisManagementSystem.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssigneeId");
+                    b.HasIndex("AssigneesId");
 
                     b.ToTable("WorkflowTasks");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Department", b =>
                 {
-                    b.HasOne("CrisisManagementSystem.API.DataLayer.User", "DeptHead")
+                    b.HasOne("CrisisManagementSystem.API.DataLayer.User", "DeptHeads")
                         .WithMany("Departments")
-                        .HasForeignKey("DeptHeadId")
+                        .HasForeignKey("DeptHeadsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DeptHead");
+                    b.Navigation("DeptHeads");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Incident", b =>
@@ -413,35 +428,35 @@ namespace CrisisManagementSystem.API.Migrations
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Workflow", b =>
                 {
-                    b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowStage", "Stage")
+                    b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowStage", "Stages")
                         .WithMany("Workflows")
-                        .HasForeignKey("StageId")
+                        .HasForeignKey("StagesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Stage");
+                    b.Navigation("Stages");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowStage", b =>
                 {
-                    b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowTask", "Task")
+                    b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowTask", "Tasks")
                         .WithMany("WorkflowStages")
-                        .HasForeignKey("TaskId")
+                        .HasForeignKey("TasksId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Task");
+                    b.Navigation("Tasks");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowTask", b =>
                 {
-                    b.HasOne("CrisisManagementSystem.API.DataLayer.User", "Assignee")
+                    b.HasOne("CrisisManagementSystem.API.DataLayer.User", "Assignees")
                         .WithMany("WorkflowTasks")
-                        .HasForeignKey("AssigneeId")
+                        .HasForeignKey("AssigneesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Assignee");
+                    b.Navigation("Assignees");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Department", b =>
