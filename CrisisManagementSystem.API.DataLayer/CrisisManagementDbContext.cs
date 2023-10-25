@@ -16,6 +16,8 @@ namespace CrisisManagementSystem.API.DataLayer
         public DbSet<Department> Departments { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<WorkflowTask> WorkflowTasks { get; set; }
+        public DbSet<WorkflowStage> WorkflowStages { get; set; }
+        public DbSet<Workflow> Workflows { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

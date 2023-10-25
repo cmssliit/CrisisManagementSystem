@@ -38,6 +38,8 @@ builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IWorkflowTaskRepository, WorkflowTaskRepository>();
+builder.Services.AddScoped<IWorkflowStageRepository, WorkflowStageRepository>();
+builder.Services.AddScoped<IWorkflowRepository, WorkflowRepository>();
 
 var app = builder.Build();
 

@@ -4,6 +4,7 @@ using CrisisManagementSystem.API.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrisisManagementSystem.API.Migrations
 {
     [DbContext(typeof(CrisisManagementDbContext))]
-    partial class CrisisManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025134326_WorkflowStageMigration")]
+    partial class WorkflowStageMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -249,35 +252,6 @@ namespace CrisisManagementSystem.API.Migrations
                         });
                 });
 
-            modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Workflow", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("StageId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WorkflowDescription")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WorkflowName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("WorkflowStagesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WorkflowStagesId");
-
-                    b.ToTable("Workflows");
-                });
-
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowStage", b =>
                 {
                     b.Property<int>("Id")
@@ -383,17 +357,6 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Navigation("Departments");
                 });
 
-            modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.Workflow", b =>
-                {
-                    b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowStage", "WorkflowStages")
-                        .WithMany("Workflows")
-                        .HasForeignKey("WorkflowStagesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WorkflowStages");
-                });
-
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowStage", b =>
                 {
                     b.HasOne("CrisisManagementSystem.API.DataLayer.WorkflowTask", "WorkflowTasks")
@@ -431,11 +394,6 @@ namespace CrisisManagementSystem.API.Migrations
                     b.Navigation("Departments");
 
                     b.Navigation("WorkflowTasks");
-                });
-
-            modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowStage", b =>
-                {
-                    b.Navigation("Workflows");
                 });
 
             modelBuilder.Entity("CrisisManagementSystem.API.DataLayer.WorkflowTask", b =>

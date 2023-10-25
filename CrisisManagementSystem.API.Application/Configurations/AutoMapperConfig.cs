@@ -23,6 +23,14 @@ namespace CrisisManagementSystem.API.Application.Configurations
             CreateMap<WorkflowTask, DTOs.WorkflowTask.CreateWorkflowTaskDto>().ReverseMap();
             CreateMap<WorkflowTask, DTOs.WorkflowTask.GetWorkflowTaskDto>().ReverseMap();
             CreateMap<WorkflowTask, DTOs.WorkflowTask.UpdateWorkflowTaskDto>().ReverseMap();
+
+            CreateMap<WorkflowStage, DTOs.WorkflowStage.CreateWorkflowStageDto>().ReverseMap();
+            CreateMap<WorkflowStage, DTOs.WorkflowStage.GetWorkflowStageDto>().ReverseMap();
+            CreateMap<WorkflowStage, DTOs.WorkflowStage.UpdateWorkflowStageDto>().ReverseMap();
+
+            CreateMap<Workflow, DTOs.Workflow.CreateWorkflowDto>().ReverseMap();
+            CreateMap<Workflow, DTOs.Workflow.GetWorkflowDto>().ReverseMap();
+            CreateMap<Workflow, DTOs.Workflow.UpdateWorkflowDto>().ReverseMap();
         }
     }
 }
