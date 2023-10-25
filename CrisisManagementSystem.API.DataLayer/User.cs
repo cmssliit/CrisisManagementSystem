@@ -10,6 +10,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public string Role { get; set; }
         public List<Department> Departments { get; set; }
         public List<WorkflowTask> WorkflowTasks { get; set; }
+        public List<UserSkill> UserSkills { get; set; }
 
     }
 }

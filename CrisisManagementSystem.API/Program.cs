@@ -40,6 +40,7 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<IWorkflowTaskRepository, WorkflowTaskRepository>();
 builder.Services.AddScoped<IWorkflowStageRepository, WorkflowStageRepository>();
 builder.Services.AddScoped<IWorkflowRepository, WorkflowRepository>();
+builder.Services.AddScoped<IUserSkillRepository, UserSkillRepository>();
 
 var app = builder.Build();
 
