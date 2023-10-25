@@ -11,7 +11,9 @@ namespace CrisisManagementSystem.API.Application.DTOs.UserSkill
         //we can add the required anotation.
         //it will only consider when adding new user
         [Required]
-        public string DeptName { get; set; }    
-        public string DeptHeadId { get; set; }    
+        public string SkillName { get; set; }
+        public DateTime CertificationDate { get; set; }
+        public string ProficiencyLevel { get; set; }
+        public int UserId { get; set; }
     }
 }
