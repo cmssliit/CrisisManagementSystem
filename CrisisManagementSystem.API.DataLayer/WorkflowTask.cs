@@ -10,6 +10,7 @@ namespace CrisisManagementSystem.API.DataLayer
         public int AssigneeId { get; set; }
         public User Users { get; set; }
         public DateTime Deadline { get; set; }
+        public List<WorkflowStage> WorkflowStages { get; set; }
 
     }
 }
