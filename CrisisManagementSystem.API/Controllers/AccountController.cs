@@ -1,6 +1,5 @@
-﻿using CrisisManagementSystem.API.DTOs.User;
-using CrisisManagementSystem.API.IRepository;
-using Microsoft.AspNetCore.Http;
+﻿using CrisisManagementSystem.API.Application.DTOs.User;
+using CrisisManagementSystem.API.Application.IRepository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrisisManagementSystem.API.Controllers
